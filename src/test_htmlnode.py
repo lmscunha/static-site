@@ -5,7 +5,8 @@ from htmlnode import HTMLNode
 
 class TestHTMLNode(unittest.TestCase):
     def test_eq_button(self):
-        node = HTMLNode("button", "Click",  props={"type": "button"})
+        node = HTMLNode("button", "Click", [HTMLNode(
+            "p", "Test text")], props={"type": "button"})
         self.assertEqual(node.props_to_html(), ' type="button"')
 
     def test_eq_a(self):
