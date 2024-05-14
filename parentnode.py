@@ -13,7 +13,8 @@ class ParentNode(HTMLNode):
             raise ValueError("No tag provided")
         if self.children is None:
             raise ValueError("Invalid children value")
-        results = ""
-        for child in self.children:
-            results += child.to_html()
-        return f"<{self.tag}>{results}</{self.tag}>"
+        curr_html = ''
+        for el in self.children:
+            last_children = el.to_html()
+            curr_html = curr_html + f"{last_children}"
+        return f"<{self.tag}>{curr_html}</{self.tag}>"
