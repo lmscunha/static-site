@@ -15,6 +15,5 @@ class ParentNode(HTMLNode):
             raise ValueError("Invalid children value")
         curr_html = ''
         for el in self.children:
-            last_children = el.to_html()
-            curr_html = curr_html + f"{last_children}"
+            curr_html += el.to_html()
         return f"<{self.tag}>{curr_html}</{self.tag}>"
