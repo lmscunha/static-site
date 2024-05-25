@@ -14,6 +14,3 @@ class LeafNode(HTMLNode):
         if self.tag:
             return f"<{self.tag}>{self.value}</{self.tag}>"
         return f"{self.value}"
-    def text_node_to_html_node(self, text_node):
-        return f"HTMLNode({self.tag}, {self.value}, {self.children}, \
-                {self.props})"
