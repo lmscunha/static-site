@@ -1,8 +1,8 @@
-from textnode import TextNode
+from textnode import TextNode, TextType
 
 
 def main():
-    text_node = TextNode("foo", "NORMAL", "www.test.com")
+    text_node = TextNode("foo", TextType.NORMAL, "www.test.com")
     print(text_node.__repr__())
 
 
